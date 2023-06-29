@@ -4,10 +4,11 @@ import ProductSection from "./components/productSection";
 import "./App.css";
 
 function App() {
+  const [productSection, setProductSection] = useState("");
   return (
     <>
       <div className="App"> </div>
-      <ProductSection />
+      <ProductSection productSection={productSection} />
     </>
   );
 }

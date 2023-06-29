@@ -1,6 +1,8 @@
 import "./ProductSection.css";
+import { useState, useEffect } from "react";
+import { GET } from "./utils/http";
 
-const ProductSection = () => {
+const ProductSection = ({ ProductSection }) => {
   const mock = {
     idDrink: "11007",
     strDrink: "Margarita",
@@ -60,7 +62,13 @@ const ProductSection = () => {
     dateModified: "2015-08-18 14:42:59",
   };
 
-  const ingredients = Object.entries(mock)
+  const [productDAta, setProductData] = useState({});
+
+  useEffect(() => {
+    GET("?s=margarita").then((data) => setProductData);
+  }, []);
+
+  const ingredients = Object.entries(productDAta)
     .filter(
       ([ingredients, values]) =>
         ingredients.startsWith("strIngredient") && values !== null
@@ -70,11 +78,11 @@ const ProductSection = () => {
   return (
     <>
       <div className="ProductSection">
-        <img src={mock.strDrinkThumb} alt={mock.strDrink} />
+        <img src={productDAta.strDrinkThumb} alt={productDAta.strDrink} />
         <div className="productSections _text">
           <div className="productSections _text_main">
-            <h1> {mock.strDrink} </h1>
-            <p> {mock.strAlcoholic} </p>
+            <h1> {productDAta.strDrink} </h1>
+            <p> {productDAta.strAlcoholic} </p>
           </div>
           <div className="productSections _text_Interaction">
             {" "}
