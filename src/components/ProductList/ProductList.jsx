@@ -14,10 +14,15 @@ const ProductList = ({ name }) => {
 
   return (
     <>
-      <div className="ProductList"> CIAOO</div>
-      {listData.map((cocktail) => (
-        <ProductData cocktail={cocktail} key={cocktail.idDrink} />
-      ))}
+      {" "}
+      <div className="wrapper_productlist">
+        <h2>{name}</h2>
+        <div className="ProductList">
+          {listData.map((cocktail) => (
+            <ProductData cocktail={cocktail} key={cocktail.idDrink} />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
