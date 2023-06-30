@@ -2,7 +2,7 @@ import "./ProductSection.css";
 import { useState, useEffect } from "react";
 import { GET } from "./utils/http";
 
-const ProductSection = ({ ProductSection }) => {
+const ProductSection = ({ productSection }) => {
   // const mock = {
   //   idDrink: "11007",
   //   strDrink: "Margarita",
@@ -65,7 +65,7 @@ const ProductSection = ({ ProductSection }) => {
   const [productData, setProductData] = useState({});
 
   useEffect(() => {
-    GET("?s=margarita").then((data) => {
+    GET("?s=" + productSection).then((data) => {
       console.log(data);
       setProductData(data.drinks[0]);
     });
@@ -82,7 +82,9 @@ const ProductSection = ({ ProductSection }) => {
     <>
       <div className="ProductSection">
         <div className="ProductSection_main">
-          <button className="ProductSection_close">X</button>
+          <button className="ProductSection_close" onClick={""}>
+            X
+          </button>
           <div className="content_img">
             <img src={productData.strDrinkThumb} alt={productData.strDrink} />
           </div>
