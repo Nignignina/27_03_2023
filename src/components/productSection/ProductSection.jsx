@@ -1,7 +1,6 @@
 import "./ProductSection.css";
 import { useState, useEffect } from "react";
-import { GET } from "./utils/http";
-
+import { GET } from "../utils/http";
 const ProductSection = ({ productSection }) => {
   // const mock = {
   //   idDrink: "11007",
@@ -82,9 +81,7 @@ const ProductSection = ({ productSection }) => {
     <>
       <div className="ProductSection">
         <div className="ProductSection_main">
-          <button className="ProductSection_close" onClick={""}>
-            X
-          </button>
+          <button className="ProductSection_close">X</button>
           <div className="content_img">
             <img src={productData.strDrinkThumb} alt={productData.strDrink} />
           </div>
@@ -118,39 +115,3 @@ const ProductSection = ({ productSection }) => {
   );
 };
 export default ProductSection;
-
-// import { useState, useEffect } from "react";
-// import { GET } from "../../utils/HTTP";
-// import "./index.css";
-
-// const ProductSection = ({ productSection, setProductSection }) => {
-//   const [productData, setProductData] = useState({});
-
-//   useEffect(() => {
-//     GET("?s=" + productSection).then((data) => setProductData(data.drinks[0]));
-//   }, []);
-
-//   const onHandleClick = () => setProductSection("");
-
-//   return (
-//     <div className="ProductSection">
-//       <img src={productData.strDrinkThumb} alt={productData.strDrink} />
-//       <div className="ProductSection__text">
-//         <div className="ProductSection__text--heading">
-//           <h1>{productData.strDrink}</h1>
-//           <p>{productData.strAlcoholic}</p>
-//         </div>
-//         <p>❤️</p>
-//       </div>
-//       <ul className="ProductSection__ingredients">
-//         <li>{productData.strIngredient1}</li>
-//         <li>{productData.strIngredient2}</li>
-//         <li>{productData.strIngredient3}</li>
-//         <li>{productData.strIngredient4}</li>
-//       </ul>
-//       <p className="ProductSection__instruct">{productData.strInstructions}</p>
-//       <button className="ProductSection__close--button" onClick={onHandleClick}>
-//         ❌
-//       </button>
-//     </div>
-//   );

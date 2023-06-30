@@ -1,0 +1,15 @@
+.ProductData {
+  background-color: blue;
+  flex-direction: column;
+  gap: 10px;
+
+  display: flex;
+}
+
+.ProductData img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
