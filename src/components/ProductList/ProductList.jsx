@@ -3,7 +3,7 @@ import "./ProductList.css";
 import { useState, useEffect } from "react";
 import ProductData from "../ProductData/ProductData";
 
-const ProductList = ({ name }) => {
+const ProductList = ({ name, setProductSection }) => {
   const [listData, setListData] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,11 @@ const ProductList = ({ name }) => {
         <h2>{name}</h2>
         <div className="ProductList">
           {listData.map((cocktail) => (
-            <ProductData cocktail={cocktail} key={cocktail.idDrink} />
+            <ProductData
+              cocktail={cocktail}
+              key={cocktail.idDrink}
+              setProductSection={setProductSection}
+            />
           ))}
         </div>
       </div>
