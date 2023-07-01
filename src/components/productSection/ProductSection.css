@@ -3,21 +3,50 @@
   flex-direction: column;
   align-items: center;
   min-width: 400px;
+  background: rgb(230, 195, 164);
+  background: linear-gradient(
+    180deg,
+    rgb(232, 106, 2) 11%,
+    rgba(242, 201, 76, 1) 100%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.fade-out {
+  opacity: 0.3;
 }
 .ProductSection_close {
   position: absolute;
-  background-color: rgb(154, 235, 161);
+  background-color: #f57200;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   top: 10px;
   right: 10px;
-  color: rgb(0, 0, 0);
+  color: #fdbb2d;
   font-weight: 600;
+  z-index: 1;
+}
+
+.ProductSection_close:active {
+  position: absolute;
+  background-color: #d70b04;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  color: #fdbb2d;
+  font-weight: 600;
+  z-index: 1;
 }
 .ProductSection_main {
   display: flex;
-  background-color: rgb(0, 0, 0);
+
+  background: black;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -47,7 +76,7 @@
 
 .productSections_text_main {
   display: flex;
-  background-color: rgba(213, 220, 211, 0);
+  background-color: rgba(0, 0, 0, 0);
   width: 40%;
   margin: 0;
   padding: 0;
@@ -76,41 +105,42 @@ p {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+
+  padding: 0px 40px;
 }
 .ingredient_title {
   text-transform: uppercase;
   color: black;
-  margin-top: 10px;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  border-bottom: 2px solid black;
+  width: 100%;
+  font-weight: bold;
 }
 .list_ingredients {
   display: flex;
+
+  justify-content: center;
 
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
 }
 
-.ingredients {
-  background-color: aqua;
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  padding: 0;
-}
-
 .ingredient {
   margin: 5px;
   padding: 5px 12px;
+  color: #ffffff;
   flex-wrap: wrap;
   list-style-type: none;
-  border-left: 4px solid rgb(153, 235, 160);
+  background-color: #000000;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .description {
   color: rgb(1, 1, 1);
   width: 80%;
   padding: 10px 15px;
-
-  background-color: rgba(153, 235, 160, 0.34);
 }
